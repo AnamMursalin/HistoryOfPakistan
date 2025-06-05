@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Pakistan - Political Archive (1947-2025)</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇵🇰</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #006A4E;
+            --light-green: #00A86B;
+            --white: #FFFFFF;
+            --gold: #DAA520;
+            --dark-gold: #B8860B;
+            --text-dark: #2C3E50;
+            --text-light: #7F8C8D;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --gradient-green: linear-gradient(135deg, #006A4E 0%, #00A86B 100%);
+            --gradient-gold: linear-gradient(135deg, #DAA520 0%, #B8860B 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #FAFAFA;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--gradient-green);
+            color: white;
+            box-shadow: 0 4px 20px var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary-green);
+            font-size: 1.2rem;
+        }
+
+        .site-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        nav a.active {
+            background: var(--gold);
+            color: var(--text-dark);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section.hidden {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 106, 78, 0.8), rgba(0, 168, 107, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23006A4E" width="1200" height="600"/><polygon fill="%23DAA520" points="0,0 200,100 0,200"/><polygon fill="%23DAA520" points="1200,400 1000,500 1200,600"/><circle fill="rgba(255,255,255,0.1)" cx="600" cy="300" r="150"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem 6rem;
+            margin: 0;
+            max-width: none;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gradient-gold);
+            color: var(--text-dark);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-gold);
+            border-radius: 2px;
+        }
+
+        /* Search and Filter Controls */
+        .controls {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--shadow);
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box, .filter-select {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.8rem 1rem;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box:focus, .filter-select:focus {
+            outline: none;
+            border-color: var(--light-green);
+        }
+
+        /* Card Styles */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #E8F5E8 0%, #F0F8F0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-tag {
+            background: var(--gradient-green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .card-description {
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* Table Styles */
+        .table-container {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th {
+            background: var(--gradient-green);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+            transition: background-color 0.3s ease;
+        }
+
+        .data-table tr:hover td {
+            background-color: #F8F9FA;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-green);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--shadow);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-date {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--text-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        /* About Section */
+        .about-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--shadow);
+            line-height: 1.8;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: var(--gradient-green);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px var(--shadow);
+        }
+
+        .team-member h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #BDC3C7;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495E;
+            color: #95A5A6;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 1rem;
+            }
+
+            .site-title {
+                font-size: 1.4rem;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-green);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 20px var(--shadow);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                margin-left: 60px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-date {
+                left: -45px;
+                transform: none;
+            }
+
+            .data-table {
+                font-size: 0.9rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 6rem 1rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-placeholder">NU</div>
+                <h1 class="site-title">History of Pakistan</h1>
+            </div>
+            <nav>
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#politicians" class="nav-link">Politicians</a></li>
+                    <li><a href="#parties" class="nav-link">Political Parties</a></li>
+                    <li><a href="#elections" class="nav-link">Elections</a></li>
+                    <li><a href="#provinces" class="nav-link">Provinces & Constituencies</a></li>
+                    <li><a href="#terms" class="nav-link">Administrative Terms</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section hero">
+            <h1>History of Pakistan</h1>
+            <p>Comprehensive Political Archive documenting Pakistan's democratic journey from 1947 to 2025. Explore politicians, parties, elections, and administrative terms that shaped our nation.</p>
+            <a href="#politicians" class="cta-button">Explore Political History</a>
+        </section>
+
+        <!-- Politicians Section -->
+        <section id="politicians" class="section hidden">
+            <div class="section-header">
+                <h2>Politicians</h2>
+                <p>Discover the leaders who shaped Pakistan's political landscape</p>
+            </div>
+            
+            <div class="controls">
+                <input type="text" class="search-box" id="politicianSearch" placeholder="Search politicians by name...">
+                <select class="filter-select" id="partyFilter">
+                    <option value="">All Political Parties</option>
+                    <option value="PTI">Pakistan Tehreek-e-Insaf (PTI)</option>
+                    <option value="PML-N">Pakistan Muslim League-Nawaz (PML-N)</option>
+                    <option value="PPP">Pakistan Peoples Party (PPP)</option>
+                    <option value="MQM">Muttahida Qaumi Movement (MQM)</option>
+                </select>
+                <select class="filter-select" id="provinceFilter">
+                    <option value="">All Provinces</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Sindh">Sindh</option>
+                    <option value="KPK">Khyber Pakhtunkhwa</option>
+                    <option value="Balochistan">Balochistan</option>
+                </select>
+            </div>
+
+            <div class="cards-grid" id="politiciansGrid">
+                <!-- Politicians will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Political Parties Section -->
+        <section id="parties" class="section hidden">
+            <div class="section-header">
+                <h2>Political Parties</h2>
+                <p>Major political parties and their contributions to Pakistan's democracy</p>
+            </div>
+            
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Party Name</th>
+                            <th>Abbreviation</th>
+                            <th>Election Symbol</th>
+                            <th>Founded</th>
+                            <th>Current Head</th>
+                        </tr>
+                    </thead>
+                    <tbody id="partiesTable">
+                        <!-- Parties will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Elections Section -->
+        <section id="elections" class="section hidden">
+            <div class="section-header">
+                <h2>Elections</h2>
+                <p>Timeline of Pakistan's democratic elections and their outcomes</p>
+            </div>
+            
+            <div class="timeline" id="electionsTimeline">
+                <!-- Elections timeline will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Provinces & Constituencies Section -->
+        <section id="provinces" class="section hidden">
+            <div class="section-header">
+                <h2>Provinces & Constituencies</h2>
+                <p>Electoral divisions and administrative regions of Pakistan</p>
+            </div>
+            
+            <div class="cards-grid" id="provincesGrid">
+                <!-- Provinces will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Administrative Terms Section -->
+        <section id="terms" class="section hidden">
+            <div class="section-header">
+                <h2>Administrative Terms</h2>
+                <p>Government periods and administrative structures</p>
+            </div>
+            
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Assembly Term</th>
+                            <th>Government Level</th>
+                            <th>Province</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="termsTable">
+                        <!-- Terms will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section hidden">
+            <div class="section-header">
+                <h2>About This Project</h2>
+                <p>Academic research project documenting Pakistan's political history</p>
+            </div>
+            
+            <div class="about-content">
+                <h3>Project Overview</h3>
+                <p>This comprehensive digital archive represents a systematic documentation of Pakistan's political history from independence in 1947 to 2025. The project serves as an educational resource for students, researchers, and citizens interested in understanding the evolution of Pakistan's democratic institutions, political leadership, and electoral processes.</p>
+                
+                <h3>Research Team</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <h4>Gulfam Afzal</h4>
+                        <p>NUM-BSCS-2023-31</p>
+                    </div>
+                    <div class="team-member">
+                        <h4>Reeha Batool</h4>
+                        <p>NUM-BSCS-2023-09</p>
+                    </div>
+                    <div class="team-member">
+                        <h4>Muhammad Bilal</h4>
+                        <p>NUM-BSCS-2023-23</p>
+                    </div>
+                    <div class="team-member">
+                        <h4>Anam Fatima</h4>
+                        <p>NUM-BSCS-2023-06</p>
+                    </div>
+                </div>
+                
+                <h3>Academic Affiliation</h3>
+                <p><strong>Department:</strong> Department of Computer Sciences<br>
+                <strong>Institution:</strong> Namal University, Mianwali, Pakistan<br>
+                <strong>Supervisor:</strong> Miss. Asiya Batool<br>
+                <strong>Submission Date:</strong> 10th June, 2024</p>
+                
+                <h3>Project Objectives</h3>
+                <p>This digital archive aims to preserve and present Pakistan's political heritage through a structured database system that captures the relationships between politicians, political parties, elections, constituencies, and administrative terms. The project facilitates research and analysis of political trends, electoral patterns, and democratic evolution in Pakistan.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section hidden">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <p>Get in touch with our research team</p>
+            </div>
+            
+            <div class="about-content">
+                <h3>Academic Contact</h3>
+                <p><strong>Supervisor:</strong> Miss. Asiya Batool<br>
+                <strong>Department:</strong> Computer Sciences<br>
+                <strong>Institution:</strong> Namal University<br>
+                <strong>Location:</strong> Mianwali, Pakistan</p>
+                
+                <h3>Project Inquiry</h3>
+                <p>For academic inquiries about this research project, please contact the Department of Computer Sciences at Namal University. This project was submitted as part of the academic curriculum and represents student research work.</p>
+                
+                <h3>Technical Support</h3>
+                <p>This website is designed to be extended with backend database integration. The current version serves as a prototype demonstrating the user interface and data structure for the comprehensive political history database.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>History of Pakistan</h3>
+                <p>Comprehensive political archive documenting Pakistan's democratic journey from 1947 to 2025.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#politicians">Politicians</a>
+                <a href="#parties">Political Parties</a>
+                <a href="#elections">Elections</a>
+            </div>
+            <div class="footer-section">
+                <h3>Academic</h3>
+                <a href="#about">About Project</a>
+                <a href="#contact">Contact</a>
+                <p>Namal University<br>Mianwali, Pakistan</p>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="#provinces">Provinces & Constituencies</a>
+                <a href="#terms">Administrative Terms</a>
+                <p>Research & Educational Use</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 History of Pakistan Project. Namal University - Department of Computer Sciences. Academic Research Project.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample Data - In real implementation, this would come from a backend API
+        const sampleData = {
+            politicians: [
+                {
+                    name: "Imran Khan",
+                    dob: "1952-10-05",
+                    gender: "Male",
+                    birthPlace: "Lahore, Punjab",
+                    party: "PTI",
+                    province: "Punjab",
+                    active: true,
+                    biography: "Former Prime Minister of Pakistan and founder of Pakistan Tehreek-e-Insaf. International cricket legend turned politician."
+                },
+                {
+                    name: "Benazir Bhutto",
+                    dob: "1953-06-21",
+                    gender: "Female",
+                    birthPlace: "Karachi, Sindh",
+                    party: "PPP",
+                    province: "Sindh",
+                    active: false,
+                    biography: "First female Prime Minister of Pakistan and leader of Pakistan Peoples Party. Advocate for democracy and women's rights."
+                },
+                {
+                    name: "Nawaz Sharif",
+                    dob: "1949-12-25",
+                    gender: "Male",
+                    birthPlace: "Lahore, Punjab",
+                    party: "PML-N",
+                    province: "Punjab",
+                    active: true,
+                    biography: "Three-time Prime Minister of Pakistan and leader of Pakistan Muslim League-Nawaz. Business leader and political veteran."
+                },
+                {
+                    name: "Asif Ali Zardari",
+                    dob: "1955-07-26",
+                    gender: "Male",
+                    birthPlace: "Karachi, Sindh",
+                    party: "PPP",
+                    province: "Sindh",
+                    active: true,
+                    biography: "Former President of Pakistan and co-chairman of Pakistan Peoples Party. Widower of Benazir Bhutto."
+                },
+                {
+                    name: "Altaf Hussain",
+                    dob: "1953-09-17",
+                    gender: "Male",
+                    birthPlace: "Karachi, Sindh",
+                    party: "MQM",
+                    province: "Sindh",
+                    active: false,
+                    biography: "Founder and former leader of Muttahida Qaumi Movement. Advocate for Muhajir rights in Pakistan."
+                },
+                {
+                    name: "Bilawal Bhutto Zardari",
+                    dob: "1988-09-21",
+                    gender: "Male",
+                    birthPlace: "Karachi, Sindh",
+                    party: "PPP",
+                    province: "Sindh",
+                    active: true,
+                    biography: "Chairman of Pakistan Peoples Party and son of Benazir Bhutto and Asif Ali Zardari. Young political leader."
+                }
+            ],
+            parties: [
+                {
+                    name: "Pakistan Tehreek-e-Insaf",
+                    abbreviation: "PTI",
+                    symbol: "🏏",
+                    founded: "1996-04-25",
+                    head: "Imran Khan"
+                },
+                {
+                    name: "Pakistan Muslim League-Nawaz",
+                    abbreviation: "PML-N",
+                    symbol: "🦁",
+                    founded: "1993-02-14",
+                    head: "Nawaz Sharif"
+                },
+                {
+                    name: "Pakistan Peoples Party",
+                    abbreviation: "PPP",
+                    symbol: "⚔️",
+                    founded: "1967-11-30",
+                    head: "Bilawal Bhutto Zardari"
+                },
+                {
+                    name: "Muttahida Qaumi Movement",
+                    abbreviation: "MQM",
+                    symbol: "🪁",
+                    founded: "1984-03-18",
+                    head: "Khalid Maqbool Siddiqui"
+                },
+                {
+                    name: "Jamiat Ulema-e-Islam",
+                    abbreviation: "JUI-F",
+                    symbol: "📖",
+                    founded: "1945-10-26",
+                    head: "Fazl-ur-Rehman"
+                }
+            ],
+            elections: [
+                {
+                    date: "2018-07-25",
+                    type: "General Election",
+                    assembly: "National Assembly",
+                    winner: "Pakistan Tehreek-e-Insaf",
+                    description: "PTI won majority with Imran Khan becoming Prime Minister"
+                },
+                {
+                    date: "2013-05-11",
+                    type: "General Election",
+                    assembly: "National Assembly",
+                    winner: "Pakistan Muslim League-Nawaz",
+                    description: "PML-N secured victory with Nawaz Sharif as Prime Minister"
+                },
+                {
+                    date: "2008-02-18",
+                    type: "General Election",
+                    assembly: "National Assembly",
+                    winner: "Pakistan Peoples Party",
+                    description: "PPP won plurality, coalition government formed"
+                },
+                {
+                    date: "2002-10-10",
+                    type: "General Election",
+                    assembly: "National Assembly",
+                    winner: "Pakistan Muslim League-Quaid",
+                    description: "PML-Q victory under military oversight"
+                },
+                {
+                    date: "1997-02-03",
+                    type: "General Election",
+                    assembly: "National Assembly",
+                    winner: "Pakistan Muslim League-Nawaz",
+                    description: "PML-N landslide victory, Nawaz Sharif's second term"
+                },
+                {
+                    date: "1993-10-06",
+                    type: "General Election",
+                    assembly: "National Assembly",
+                    winner: "Pakistan Peoples Party",
+                    description: "PPP victory, Benazir Bhutto's second term"
+                }
+            ],
+            provinces: [
+                {
+                    name: "Punjab",
+                    type: "Province",
+                    constituencies: [
+                        { code: "NA-1", city: "Lahore", assembly: "National Assembly" },
+                        { code: "NA-2", city: "Faisalabad", assembly: "National Assembly" },
+                        { code: "NA-3", city: "Rawalpindi", assembly: "National Assembly" },
+                        { code: "PP-1", city: "Lahore", assembly: "Provincial Assembly" },
+                        { code: "PP-2", city: "Multan", assembly: "Provincial Assembly" }
+                    ]
+                },
+                {
+                    name: "Sindh",
+                    type: "Province",
+                    constituencies: [
+                        { code: "NA-10", city: "Karachi", assembly: "National Assembly" },
+                        { code: "NA-11", city: "Hyderabad", assembly: "National Assembly" },
+                        { code: "NA-12", city: "Sukkur", assembly: "National Assembly" },
+                        { code: "PS-1", city: "Karachi", assembly: "Provincial Assembly" },
+                        { code: "PS-2", city: "Larkana", assembly: "Provincial Assembly" }
+                    ]
+                },
+                {
+                    name: "Khyber Pakhtunkhwa",
+                    type: "Province",
+                    constituencies: [
+                        { code: "NA-20", city: "Peshawar", assembly: "National Assembly" },
+                        { code: "NA-21", city: "Mardan", assembly: "National Assembly" },
+                        { code: "NA-22", city: "Swat", assembly: "National Assembly" },
+                        { code: "PK-1", city: "Peshawar", assembly: "Provincial Assembly" },
+                        { code: "PK-2", city: "Abbottabad", assembly: "Provincial Assembly" }
+                    ]
+                },
+                {
+                    name: "Balochistan",
+                    type: "Province",
+                    constituencies: [
+                        { code: "NA-30", city: "Quetta", assembly: "National Assembly" },
+                        { code: "NA-31", city: "Turbat", assembly: "National Assembly" },
+                        { code: "NA-32", city: "Zhob", assembly: "National Assembly" },
+                        { code: "PB-1", city: "Quetta", assembly: "Provincial Assembly" },
+                        { code: "PB-2", city: "Gwadar", assembly: "Provincial Assembly" }
+                    ]
+                }
+            ],
+            terms: [
+                {
+                    assembly: "15th National Assembly",
+                    level: "Federal",
+                    province: "Pakistan",
+                    startDate: "2018-08-13",
+                    endDate: "2023-08-12"
+                },
+                {
+                    assembly: "14th National Assembly",
+                    level: "Federal",
+                    province: "Pakistan",
+                    startDate: "2013-06-01",
+                    endDate: "2018-05-31"
+                },
+                {
+                    assembly: "13th National Assembly",
+                    level: "Federal",
+                    province: "Pakistan",
+                    startDate: "2008-03-17",
+                    endDate: "2013-03-16"
+                },
+                {
+                    assembly: "Punjab Assembly 2018-2023",
+                    level: "Provincial",
+                    province: "Punjab",
+                    startDate: "2018-08-13",
+                    endDate: "2023-08-12"
+                },
+                {
+                    assembly: "Sindh Assembly 2018-2023",
+                    level: "Provincial",
+                    province: "Sindh",
+                    startDate: "2018-08-13",
+                    endDate: "2023-08-12"
+                }
+            ]
+        };
+
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.section');
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            // Initialize the page
+            showSection('home');
+            populateData();
+
+            // Navigation click handlers
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // Update active nav link
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show target section
+                    showSection(targetId);
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Mobile menu toggle
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+
+            // Search and filter functionality
+            setupSearchAndFilters();
+
+            // Smooth scrolling for CTA button
+            document.querySelector('.cta-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                
+                // Update nav
+                navLinks.forEach(l => l.classList.remove('active'));
+                document.querySelector(`[href="#${targetId}"]`).classList.add('active');
+                
+                showSection(targetId);
+            });
+        });
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.classList.remove('hidden');
+                    section.classList.add('fade-in');
+                } else {
+                    section.classList.add('hidden');
+                    section.classList.remove('fade-in');
+                }
+            });
+        }
+
+        function populateData() {
+            populatePoliticians();
+            populateParties();
+            populateElections();
+            populateProvinces();
+            populateTerms();
+        }
+
+        function populatePoliticians() {
+            const grid = document.getElementById('politiciansGrid');
+            grid.innerHTML = '';
+
+            sampleData.politicians.forEach(politician => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.setAttribute('data-party', politician.party);
+                card.setAttribute('data-province', politician.province);
+                card.setAttribute('data-name', politician.name.toLowerCase());
+
+                card.innerHTML = `
+                    <div class="card-image">
+                        <img src="https://placehold.co/200x250/004d40/ffffff?text=${encodeURIComponent(politician.name.split(' ').map(n => n[0]).join(''))}" 
+                             alt="${politician.name}" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">${politician.name}</h3>
+                        <div class="card-meta">
+                            <span class="card-tag">${politician.party}</span>
+                            <span class="card-tag">${politician.province}</span>
+                            <span class="card-tag">${politician.active ? 'Active' : 'Inactive'}</span>
+                        </div>
+                        <p class="card-description">
+                            <strong>Born:</strong> ${new Date(politician.dob).toLocaleDateString('en-GB')}<br>
+                            <strong>Place:</strong> ${politician.birthPlace}<br><br>
+                            ${politician.biography}
+                        </p>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        function populateParties() {
+            const table = document.getElementById('partiesTable');
+            table.innerHTML = '';
+
+            sampleData.parties.forEach(party => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><strong>${party.name}</strong></td>
+                    <td>${party.abbreviation}</td>
+                    <td style="font-size: 1.5rem;">${party.symbol}</td>
+                    <td>${new Date(party.founded).toLocaleDateString('en-GB')}</td>
+                    <td>${party.head}</td>
+                `;
+                table.appendChild(row);
+            });
+        }
+
+        function populateElections() {
+            const timeline = document.getElementById('electionsTimeline');
+            timeline.innerHTML = '';
+
+            sampleData.elections.forEach((election, index) => {
+                const item = document.createElement('div');
+                item.className = 'timeline-item';
+
+                item.innerHTML = `
+                    <div class="timeline-content">
+                        <h3>${election.type}</h3>
+                        <p><strong>Assembly:</strong> ${election.assembly}</p>
+                        <p><strong>Winner:</strong> ${election.winner}</p>
+                        <p>${election.description}</p>
+                    </div>
+                    <div class="timeline-date">${new Date(election.date).toLocaleDateString('en-GB')}</div>
+                `;
+
+                timeline.appendChild(item);
+            });
+        }
+
+        function populateProvinces() {
+            const grid = document.getElementById('provincesGrid');
+            grid.innerHTML = '';
+
+            sampleData.provinces.forEach(province => {
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                const constituenciesList = province.constituencies.map(c => 
+                    `<li><strong>${c.code}</strong> - ${c.city} (${c.assembly})</li>`
+                ).join('');
+
+                card.innerHTML = `
+                    <div class="card-content">
+                        <h3 class="card-title">${province.name}</h3>
+                        <div class="card-meta">
+                            <span class="card-tag">${province.type}</span>
+                            <span class="card-tag">${province.constituencies.length} Constituencies</span>
+                        </div>
+                        <p class="card-description">
+                            <strong>Key Constituencies:</strong>
+                            <ul style="margin-top: 10px; padding-left: 20px;">
+                                ${constituenciesList}
+                            </ul>
+                        </p>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        function populateTerms() {
+            const table = document.getElementById('termsTable');
+            table.innerHTML = '';
+
+            sampleData.terms.forEach(term => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><strong>${term.assembly}</strong></td>
+                    <td>${term.level}</td>
+                    <td>${term.province}</td>
+                    <td>${new Date(term.startDate).toLocaleDateString('en-GB')}</td>
+                    <td>${new Date(term.endDate).toLocaleDateString('en-GB')}</td>
+                `;
+                table.appendChild(row);
+            });
+        }
+
+        function setupSearchAndFilters() {
+            const searchBox = document.getElementById('politicianSearch');
+            const partyFilter = document.getElementById('partyFilter');
+            const provinceFilter = document.getElementById('provinceFilter');
+
+            if (searchBox) {
+                searchBox.addEventListener('input', filterPoliticians);
+            }
+            if (partyFilter) {
+                partyFilter.addEventListener('change', filterPoliticians);
+            }
+            if (provinceFilter) {
+                provinceFilter.addEventListener('change', filterPoliticians);
+            }
+        }
+
+        function filterPoliticians() {
+            const searchTerm = document.getElementById('politicianSearch').value.toLowerCase();
+            const partyFilter = document.getElementById('partyFilter').value;
+            const provinceFilter = document.getElementById('provinceFilter').value;
+            const cards = document.querySelectorAll('#politiciansGrid .card');
+
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name');
+                const party = card.getAttribute('data-party');
+                const province = card.getAttribute('data-province');
+
+                const matchesSearch = !searchTerm || name.includes(searchTerm);
+                const matchesParty = !partyFilter || party === partyFilter;
+                const matchesProvince = !provinceFilter || province === provinceFilter;
+
+                if (matchesSearch && matchesParty && matchesProvince) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 106, 78, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'var(--gradient-green)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Smooth animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and major elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementsToObserve = document.querySelectorAll('.card, .timeline-item, .table-container');
+            elementsToObserve.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
