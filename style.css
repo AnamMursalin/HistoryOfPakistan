@@ -1,0 +1,787 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #006A4E;
+    --light-green: #00A86B;
+    --white: #FFFFFF;
+    --gold: #DAA520;
+    --dark-gold: #B8860B;
+    --text-dark: #2C3E50;
+    --text-light: #7F8C8D;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --gradient-green: linear-gradient(135deg, #006A4E 0%, #00A86B 100%);
+    --gradient-gold: linear-gradient(135deg, #DAA520 0%, #B8860B 100%);
+    --header-height: 70px; /* Default header height */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: #FAFAFA;
+}
+
+/* Header Styles */
+header {
+    background: var(--gradient-green);
+    color: white;
+    box-shadow: 0 4px 20px var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out, background 0.3s ease, backdrop-filter 0.3s ease;
+    height: var(--header-height);
+}
+header.scrolled {
+    background: rgba(0, 106, 78, 0.95); /* Slightly transparent green */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.logo-placeholder {
+    width: 45px;  /* You can adjust this size */
+    height: 45px; /* You can adjust this size */
+    /*background: var(--white); /* Keep if your logo has transparency and needs a white bg */
+    /* Or set to 'transparent' if your logo is opaque or should blend */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   /* box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden; /* Important if your logo is not perfectly circular but you want it clipped */
+}
+
+.logo-placeholder img {
+    width: 100%; /* Make image fill the placeholder width */
+    height: 100%; /* Make image fill the placeholder height */
+    object-fit: contain; /* Ensures the whole logo is visible and maintains aspect ratio.
+                           Use 'cover' if you want it to fill and potentially crop.
+                           Use 'scale-down' if you want it to only shrink if it's too big. */
+    /* If your logo image itself isn't circular, but you want it to appear so inside the circle: */
+    /* border-radius: 50%; */ /* Uncomment this if your logo file is square and you want it displayed as a circle */
+}
+
+.site-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem; /* Reduced gap for better fit */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem; /* Adjusted padding */
+    border-radius: 20px; /* Slightly smaller radius */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+nav a:hover, nav a:focus {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+nav a.active {
+    background: var(--gold);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s ease-in-out;
+    border-radius: 3px;
+}
+.mobile-menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.mobile-menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.mobile-menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/* Main Content */
+main {
+    margin-top: var(--header-height); /* Use variable for dynamic header height */
+    padding-top: 20px; /* Add some space below fixed header */
+}
+
+.section {
+    padding: 3rem 2rem; /* Adjusted padding */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section.hidden {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 106, 78, 0.85), rgba(0, 168, 107, 0.85)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23006A4E" width="1200" height="600"/><path d="M0 0 L400 0 L200 200 Z" fill="rgba(218,165,32,0.2)"/><path d="M800 600 L1200 600 L1000 400 Z" fill="rgba(218,165,32,0.2)"/><circle fill="rgba(255,255,255,0.05)" cx="600" cy="300" r="200"/><circle fill="rgba(255,255,255,0.03)" cx="200" cy="150" r="100"/><circle fill="rgba(255,255,255,0.03)" cx="1000" cy="450" r="100"/></svg>');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem 5rem; /* Adjusted padding */
+    margin: 0;
+    max-width: none; /* Allow hero to be full-width */
+    min-height: calc(100vh - var(--header-height) - 20px); /* Full viewport height minus header and main's padding-top */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3rem; /* Slightly reduced */
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero p {
+    font-size: 1.2rem; /* Slightly reduced */
+    margin-bottom: 2rem;
+    max-width: 700px; /* Wider for better readability */
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--gradient-gold);
+    color: var(--text-dark);
+    padding: 0.9rem 1.8rem; /* Adjusted padding */
+    text-decoration: none;
+    border-radius: 30px; /* More rounded */
+    font-weight: 600;
+    font-size: 1.05rem; /* Slightly adjusted */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(218, 165, 32, 0.25);
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.cta-button:hover, .cta-button:focus {
+    transform: translateY(-4px) scale(1.03); /* Enhanced hover effect */
+    box-shadow: 0 8px 20px rgba(218, 165, 32, 0.35);
+    outline: none;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem; /* Adjusted margin */
+}
+
+.section-header h2 {
+    font-size: 2.2rem; /* Adjusted size */
+    color: var(--primary-green);
+    margin-bottom: 0.8rem; /* Adjusted margin */
+    position: relative;
+    padding-bottom: 0.5rem; /* Space for underline */
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px; /* Slightly smaller */
+    height: 3px; /* Thinner */
+    background: var(--gradient-gold);
+    border-radius: 2px;
+}
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* Search and Filter Controls */
+.controls {
+    background: white;
+    padding: 1.5rem; /* Adjusted padding */
+    border-radius: 12px; /* Slightly smaller radius */
+    box-shadow: 0 5px 15px var(--shadow);
+    margin-bottom: 2.5rem; /* Adjusted margin */
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-box, .filter-select {
+    flex: 1;
+    min-width: 180px; /* Adjusted min-width */
+    padding: 0.7rem 0.9rem; /* Adjusted padding */
+    border: 1px solid #DDD; /* Thinner border */
+    border-radius: 6px; /* Smaller radius */
+    font-size: 0.95rem; /* Adjusted font size */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-box:focus, .filter-select:focus {
+    outline: none;
+    border-color: var(--light-green);
+    box-shadow: 0 0 0 2px rgba(0, 168, 107, 0.2); /* Focus ring */
+}
+
+/* Card Styles */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly smaller minmax */
+    gap: 1.8rem; /* Adjusted gap */
+    margin-top: 1.5rem; /* Adjusted margin */
+}
+
+.card {
+    background: white;
+    border-radius: 12px; /* Smaller radius */
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all 0.3s ease;
+    border-top: 3px solid var(--primary-green); /* Thinner top border */
+    display: flex;
+    flex-direction: column; /* Ensure content flows top to bottom */
+}
+
+.card:hover {
+    transform: translateY(-6px); /* Slightly more lift */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-image {
+    width: 100%;
+    height: 180px; /* Adjusted height */
+    background: linear-gradient(135deg, #E8F5E8 0%, #F0F8F0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem; /* Adjusted font size */
+    color: var(--text-light);
+    border-bottom: 1px solid #E8E8E8; /* Softer border */
+}
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the area */
+}
+
+.card-content {
+    padding: 1.2rem; /* Adjusted padding */
+    flex-grow: 1; /* Allows content to fill space if card heights vary */
+}
+
+.card-title {
+    font-size: 1.2rem; /* Adjusted size */
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 0.4rem; /* Adjusted margin */
+}
+
+.card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem; /* Adjusted gap */
+    margin-bottom: 0.8rem; /* Adjusted margin */
+}
+
+.card-tag {
+    background: var(--gradient-green);
+    color: white;
+    padding: 0.25rem 0.7rem; /* Adjusted padding */
+    border-radius: 12px; /* Smaller radius */
+    font-size: 0.75rem; /* Adjusted size */
+    font-weight: 500;
+}
+
+.card-description {
+    color: var(--text-light);
+    line-height: 1.5;
+    font-size: 0.9rem; /* Adjusted size */
+}
+
+/* Table Styles */
+.table-container {
+    background: white;
+    border-radius: 12px; /* Smaller radius */
+    overflow: hidden; /* Important for border-radius on table */
+    box-shadow: 0 5px 15px var(--shadow);
+    margin-top: 1.5rem; /* Adjusted margin */
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    background: var(--gradient-green);
+    color: white;
+    padding: 0.9rem 1rem; /* Adjusted padding */
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem; /* Adjusted size */
+}
+
+.data-table td {
+    padding: 0.9rem 1rem; /* Adjusted padding */
+    border-bottom: 1px solid #E8E8E8; /* Softer border */
+    transition: background-color 0.2s ease;
+    font-size: 0.9rem; /* Adjusted size */
+}
+
+.data-table tr:hover td {
+    background-color: #F8F9FA;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    margin: 2.5rem 0; /* Adjusted margin */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px; /* Thinner line */
+    height: 100%;
+    background: var(--gradient-green);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 2rem; /* Adjusted margin */
+    position: relative;
+    width: 100%; /* Ensure item takes full width for alignment */
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: auto; /* Push to right */
+    margin-right: calc(50% + 30px); /* Align with timeline */
+}
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: auto; /* Push to left */
+    margin-left: calc(50% + 30px); /* Align with timeline */
+}
+
+
+.timeline-content {
+    background: white;
+    padding: 1.2rem; /* Adjusted padding */
+    border-radius: 10px; /* Smaller radius */
+    box-shadow: 0 4px 15px var(--shadow);
+    width: calc(50% - 30px); /* Adjust width to account for gap */
+    position: relative;
+    border-left: 3px solid var(--gold); /* Decorative border */
+}
+.timeline-item:nth-child(even) .timeline-content {
+    border-left: none;
+    border-right: 3px solid var(--gold);
+}
+
+
+.timeline-date {
+    position: absolute;
+    top: 15px; /* Align with content */
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--text-dark);
+    padding: 0.4rem 0.8rem; /* Adjusted padding */
+    border-radius: 15px; /* Smaller radius */
+    font-weight: 600;
+    font-size: 0.85rem; /* Adjusted size */
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    z-index: 1;
+}
+.timeline-content h3 {
+    font-size: 1.1rem;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+.timeline-content p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+.timeline-content p strong {
+    color: var(--text-dark);
+}
+
+
+/* About Section */
+.about-content {
+    background: white;
+    padding: 2.5rem; /* Adjusted padding */
+    border-radius: 12px; /* Smaller radius */
+    box-shadow: 0 5px 15px var(--shadow);
+    line-height: 1.7; /* Slightly adjusted */
+}
+.about-content h3 {
+    color: var(--primary-green);
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+}
+.about-content p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+.about-content strong {
+    color: var(--text-dark);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Adjusted minmax */
+    gap: 1.5rem; /* Adjusted gap */
+    margin-top: 1.5rem; /* Adjusted margin */
+}
+
+.team-member {
+    background: var(--gradient-green);
+    color: white;
+    padding: 1.5rem; /* Adjusted padding */
+    border-radius: 10px; /* Smaller radius */
+    text-align: center;
+    box-shadow: 0 4px 10px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.team-member h4 {
+    font-size: 1.1rem; /* Adjusted size */
+    margin-bottom: 0.4rem; /* Adjusted margin */
+}
+
+.team-member p {
+    opacity: 0.9;
+    font-size: 0.85rem; /* Adjusted size */
+    margin-bottom: 0; /* Remove bottom margin for p inside team member */
+}
+
+/* Footer */
+footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 2.5rem 2rem 1rem; /* Adjusted padding */
+    margin-top: 3rem; /* Adjusted margin */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Adjusted minmax */
+    gap: 1.8rem; /* Adjusted gap */
+    margin-bottom: 1.8rem; /* Adjusted margin */
+}
+
+.footer-section h3 {
+    color: var(--gold);
+    margin-bottom: 0.8rem; /* Adjusted margin */
+    font-size: 1.2rem; /* Adjusted size */
+}
+.footer-section p {
+    font-size: 0.9rem;
+    color: #BDC3C7;
+    line-height: 1.5;
+}
+
+.footer-section a {
+    color: #BDC3C7;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.4rem; /* Adjusted margin */
+    transition: color 0.3s ease, padding-left 0.3s ease; /* Added padding-left transition */
+    font-size: 0.9rem; /* Adjusted size */
+}
+
+.footer-section a:hover, .footer-section a:focus {
+    color: var(--gold);
+    padding-left: 5px; /* Indent on hover */
+    outline: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem; /* Adjusted padding */
+    border-top: 1px solid #3E576F; /* Softer border */
+    color: #A0B0B9; /* Lighter text */
+    font-size: 0.85rem; /* Adjusted size */
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px); /* Slightly less travel */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-init { /* Initial state for JS-triggered animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-visible { /* State after JS adds class */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Adjusted breakpoint for tablet */
+    nav ul {
+        gap: 1rem;
+    }
+    nav a {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.9rem;
+    }
+    .site-title {
+        font-size: 1.5rem;
+    }
+    .logo-placeholder {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 60px; /* Smaller header on mobile */
+    }
+    .header-content {
+        padding: 0 1rem; /* Reduced padding */
+    }
+
+    .site-title {
+        font-size: 1.3rem; /* Smaller title */
+    }
+
+    nav ul {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        background: var(--primary-green); /* Solid background */
+        flex-direction: column;
+        padding: 1rem 0; /* Padding for items */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    nav ul.active {
+        display: flex; /* Show when active */
+    }
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    nav a {
+        display: block; /* Make links full width */
+        padding: 0.8rem 1rem;
+        border-radius: 0; /* No radius for full-width items */
+        width: 100%;
+    }
+    nav a:hover, nav a.active {
+        background: rgba(255, 255, 255, 0.15); /* Consistent hover/active */
+    }
+    nav a.active {
+        background: var(--gold);
+        color: var(--text-dark);
+    }
+
+    .mobile-menu-toggle {
+        display: flex; /* Show hamburger */
+    }
+
+    .hero {
+        padding: 4rem 1rem 3rem;
+        min-height: calc(90vh - var(--header-height));
+    }
+    .hero h1 {
+        font-size: 2.2rem; /* Adjusted size */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjusted size */
+    }
+
+    .section {
+        padding: 2.5rem 1rem; /* Adjusted padding */
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .search-box, .filter-select {
+        width: 100%; /* Full width controls */
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+        gap: 1.5rem;
+    }
+
+    .timeline::before {
+        left: 20px; /* Shift line to left */
+        transform: translateX(0);
+    }
+
+    .timeline-item {
+        flex-direction: column !important; /* Force column layout, important to override inline styles from JS */
+        align-items: flex-start; /* Align items to the start */
+        padding-left: 40px; /* Space for date and line */
+        margin-bottom: 1.5rem;
+    }
+    .timeline-item .timeline-content {
+        width: 100%; /* Full width */
+        margin-left: 0 !important; /* Reset margins */
+        margin-right: 0 !important;
+        border-left: 3px solid var(--gold); /* Consistent border */
+        border-right: none;
+    }
+
+    .timeline-date {
+        position: relative; /* Static positioning within the flow */
+        left: -30px; /* Position relative to the padded left of timeline-item */
+        transform: none;
+        margin-bottom: 0.5rem; /* Space below date */
+        display: inline-block; /* Allow it to sit nicely */
+        top: auto;
+    }
+
+    .data-table {
+        font-size: 0.85rem; /* Smaller font for table */
+    }
+    .data-table th,
+    .data-table td {
+        padding: 0.6rem 0.5rem; /* Smaller padding */
+    }
+    /* Optional: Force table to not be like a table */
+    /* For very small screens, you might consider a card-like layout for table rows */
+    /*
+    .data-table thead { display: none; }
+    .data-table tr { display: block; margin-bottom: .625em; border: 1px solid #ddd; }
+    .data-table td { display: block; text-align: right; border-bottom: 1px dotted #ccc; }
+    .data-table td::before { content: attr(data-label); float: left; font-weight: bold; text-transform: uppercase; }
+    .data-table td:last-child { border-bottom: 0; }
+    */
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 1rem 2rem;
+    }
+    .hero h1 {
+        font-size: 1.8rem; /* Further reduce */
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+    .cta-button {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem; /* Further reduce */
+    }
+    .section-header p {
+        font-size: 0.95rem;
+    }
+
+    .about-content {
+        padding: 1.5rem; /* Reduced padding */
+    }
+    .footer-content {
+        grid-template-columns: 1fr; /* Single column footer */
+        text-align: center;
+    }
+    .footer-section h3 {
+        margin-top: 1rem;
+    }
+    .footer-section a:hover, .footer-section a:focus {
+        padding-left: 0; /* No indent on mobile hover */
+    }
+}
